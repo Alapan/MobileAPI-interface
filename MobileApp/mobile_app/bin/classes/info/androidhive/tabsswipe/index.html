@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Insert title here</title>
+				<script type="text/javascript">
+			window.fbAsyncInit=function(){
+				FB.init({
+					appId	:'539207986192438', //App ID
+					status	:true,				//check login status
+					cookie	:true,				//enable cookies to allow the server to access the session
+					xfbml	:true				//parse XFBML
+				});
+
+				$('fb').on('click',function(){
+					FB.login(function(response){
+						console.log(response)
+						if(response.authResponse){
+							javaRest.user.loginSocial(response.authResponse.accessToken,
+									function(error){
+									if(error){
+										console.log(error)
+									}
+									else{
+										window.location='dashboard.html'
+									}
+									})
+									console.log('Welcome!Fetching your information...');
+									FB.api('/me',function(response){
+										console.log('Hello, ' + response.name + '.');
+									});
+						}else{
+							console.log('Login cancelled!');
+						}
+					});
+
+				})
+			};
+
+			//Load the SDK asynchronously
+			(function(d){
+				var js,id='facebook-jssdk',ref=d.getElementsByTagName('script')[0];
+				if(d.getElementById(id)){
+					return;
+				}
+				js=d.createElement('script');
+				js.id=id;
+				js.async=true;
+				js.src="//connect.facebook.net/en_US/all.js";
+				ref.parentNode.insertBefore(js,ref);
+			}(document));
+		</script>
+	</head>
+	<body>
+		<input type="button" value="Click here" onClick="sendUrl()"/>
+		<script type="text/javascript">
+			function sendUrl(){
+				
+			}
+		</script>
+	</body>
+</html>

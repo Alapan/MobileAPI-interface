@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Assignment 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="mytext">Test</string>
+    <string name="button_text">Click here</string>
+    <string name="submit_text">Submit</string>
+    <string name="enter_url">Enter the name of the URL below:</string>
+    <string name="desc">Retrieved image</string>
+    <string name="enter_woeid">Enter the WOEID of the city</string>
+    <string name="submit_woeid">View weather data</string>
+    <string name="app_id">1413438105592317</string>
+    <string name="view_loc">View your current location details</string>
+</resources>
